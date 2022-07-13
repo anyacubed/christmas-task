@@ -1,0 +1,1117 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  color: white;
+  background-color: #192F2D;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
+  transition: .3s;
+}
+
+a:hover {
+  filter: invert(57%) sepia(100%) saturate(329%) hue-rotate(141deg) brightness(89%) contrast(90%);
+  transition: .3s;
+}
+
+.header {
+  height: 70px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+}
+
+.header__nav a {
+  position: relative;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 20px;
+}
+
+/* .header__active-link {
+  content: "";
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  right: 15px;
+  height: 3px;
+  background-color: #278D9F;
+} */
+
+.header__icon {
+  background-image: url("../public/svg/tree.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.header__adds {
+  display: flex;
+  align-items: center;
+}
+
+.header__adds-input {
+  width: 380px;
+  height: 40px;
+  border: 1px solid #278D9F;
+  border-radius: 25px;
+  outline: none;
+  padding: 5px 25px;
+  font-size: 18px;
+  background-color: rgba(31, 112, 127, .3);
+  /* background-image: url("../public/svg/search.svg");
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: 330px center; */
+  color: white;
+  margin: 0 20px;
+  /* cursor: pointer; */
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { 
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
+  cursor: pointer;
+}
+
+.header__adds-ball {
+  width: 44px;
+  height: 56px;
+  background-image: url("../public/svg/ball-2.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.header__adds-ball span {
+  display: inline-block;
+  width: 100%;
+  height: 42px;
+  margin-top: 15px;
+  border-radius: 50%;
+  border: 1px solid white;
+  text-align: center;
+  line-height: 40px;
+  font-size: 20px;
+  background-color: #278D9F;
+}
+
+main {
+  background-image: url("../public/bg.jpg");
+  min-height: calc(100vh - 140px);
+  padding: 20px 0;
+}
+
+/*#region*/
+/* Main page */
+
+.main-page {
+  display: flex;
+  /* display: none; */
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  min-height: calc(100vh - 180px);
+}
+
+.main-page__title {
+  width: 600px;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  padding: 0 85px;
+  text-align: center;
+  background-color: rgba(31, 112, 127, .3);
+  border: 3px solid #278D9F;
+  backdrop-filter: blur(5px);
+  border-radius: 25px;
+  font-size: 48px;
+}
+
+.main-page__btn {
+  width: 320px;
+  height: 60px;
+  background-color: rgba(31, 112, 127, .3);
+  border: 3px solid #278D9F;
+  backdrop-filter: blur(5px);
+  border-radius: 25px;
+  color: white;
+  font-size: 22px;
+  overflow: hidden;
+  outline: 1px solid;
+  outline-color: rgba(255, 255, 255, 0.5);
+  outline-offset: 0px;
+  transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.main-page__btn:hover {
+  outline-color: rgba(255, 255, 255, 0);
+  outline-offset: 15px;
+}
+
+/*#endregion*/
+
+/*#region*/
+/* Christmas decorations page */
+
+.xmas-decor {
+  z-index: 1;
+  margin: 0 auto;
+  max-width: 1440px;
+  width: 100%;
+  display: none;
+  /* display: flex; */
+  flex-direction: column;
+  gap: 20px;
+}
+
+.xmas-decor__sorting {
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(31, 112, 127, .3);
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  padding: 0 20px;
+}
+
+h2 {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.xmas-decor__sorting-points {
+  height: 75%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.xmas-decor__sorting-points p {
+  text-transform: uppercase;
+}
+
+.xmas-decor__sorting-point {
+  display: flex;
+}
+
+.sorting-point__btn {
+  border: none;
+  background-color: transparent;
+  margin: 0 3px;
+}
+
+.sorting-point__btn:hover {
+  transition: .3s;
+  transform: scale(1.15);
+}
+
+.sorting-point__btn_active {
+  opacity: 0.5;
+}
+
+.shape__btn img {
+  width: 40px;
+  height: 40px;
+}
+
+.shape__btn_active {
+  filter: invert(9%) sepia(63%) saturate(461%) hue-rotate(322deg) brightness(83%) contrast(88%);
+}
+
+.size__btn_active {
+  filter: invert(9%) sepia(63%) saturate(461%) hue-rotate(322deg) brightness(83%) contrast(88%);
+}
+
+.xmas-decor__cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 auto;
+}
+
+.card {
+  width: 280px;
+  height: 260px;
+  background-color: rgba(31, 112, 127, .3);
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  padding: 0 10px;
+  cursor: pointer;
+  border: 1px solid #278D9F;
+}
+
+.card__title {
+  text-align: center;
+}
+
+.card__content {
+  display: flex;
+  gap: 15px;
+}
+
+.card__img {
+  width: 90px;
+  height: 110px;
+  object-fit: contain;
+}
+
+.card__ribbon {
+  position: absolute;
+  top: 210px;
+  width: 80px;
+  height: 40px;
+  background: #24C5DB;
+  left: -8px;
+}
+
+.card__ribbon::before, 
+.card__ribbon::after {
+  content: "";
+  position: absolute;
+  height: 0;
+  width: 0;
+}
+
+.card__ribbon:before {
+  border-bottom: 8px solid #14455b;
+  border-left: 8px solid transparent;
+  top: -8px;
+}
+
+.card__ribbon:after {
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-left: 15px solid #24C5DB;
+  right: -15px;
+}
+
+.card__active .card__ribbon {
+  background: #CBB77A;
+}
+
+.card__active .card__ribbon:after {  
+  border-left: 15px solid #CBB77A;
+}
+
+.card__description p {
+  margin: 5px 0;
+  font-size: 20px;
+}
+
+.sorting-point__checkbox {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox__input {
+  display: none;
+}
+
+.checkbox__label {
+  position: relative;
+  display: flex;
+  width: 30px;
+  height: 30px;
+  backdrop-filter: blur(6px);
+  border: 1px solid #278D9F; 
+  border-radius: 5px;
+  padding: 0;
+  margin: 0;
+  margin-left: 20px;
+  cursor: pointer;
+  transition: .5s;
+}
+
+.checkbox__label:hover {
+  background-color: #278D9F;
+}
+
+.checkbox__input:checked + .checkbox__label {
+  background-color: #278D9F;
+  border-color: #278D9F;
+}
+
+.checkbox__input:checked + .checkbox__label::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 5px;
+  left: 9px;
+  width: 6px;
+  height: 10px;
+  border: solid #fff;
+  border-width: 0 4px 4px 0;
+  transform: rotate(45deg);
+}
+
+.sorting-point__quantity {
+ width: 200px;
+}
+
+.sorting-point__quantity span {
+  text-transform: uppercase;
+}
+
+.quantity__counter {
+  display: flex;
+  justify-content: space-between;
+}
+
+.quantity__counter span {
+  margin: 2px 0;
+}
+
+.range {
+  filter: invert(57%) sepia(100%) saturate(329%) hue-rotate(141deg) brightness(89%) contrast(90%);
+  cursor: pointer;
+  width: 100%;
+  /* height: 10px;
+  margin: 10px 0; */
+  cursor: pointer;
+}
+/* 
+.range.noUi-connect {
+  background: #278D9F;
+}
+
+.range.noUi-horizontal {
+  height: 10px;
+}
+
+.noUi-horizontal .noUi-handle {
+  width: 21px !important; 
+  height: 15px !important;
+  right: -11px !important;
+  top: -3px !important;
+  cursor: pointer;
+}
+
+.noUi-handle::before {
+  height: 3px !important;
+}
+
+.noUi-handle::after {
+  height: 3px !important;
+}
+
+.range .noUi-handle {
+  height: 10px;
+  width: 10px;
+  top: -5px;
+  right: -9px;
+  border-radius: 5px;
+} */
+
+.sorting-point__year {
+  width: 200px;
+ }
+ 
+ .year__counter {
+   display: flex;
+   justify-content: space-between;
+ }
+ 
+ .year__counter p {
+   margin: 2px 0;
+ }
+
+.sorting-point__select {
+  width: 380px;
+  height: 40px;
+  padding: 5px 25px;
+  outline: none;
+  appearance: none;
+  cursor: pointer;
+  background-color: rgba(31, 112, 127, .3);
+  border: 1px solid #278D9F;
+  backdrop-filter: blur(5px);
+  border-radius: 25px;
+  font-size: 20px;
+  color: white;
+  background-image: url(../public/svg/arrow-down.svg);
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: 340px center;
+  margin-bottom: 125px;
+}
+
+.sorting-point__select option {
+  background-color: #183E42;
+}
+
+.sorting-point__reset {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.sorting-point__reset button {
+  width: 250px;
+  height: 40px;
+  margin: 10px 0;
+  border-radius: 20px;
+  border: 1px solid #278D9F;
+  background-color: rgba(31, 112, 127, .3);
+  backdrop-filter: blur(6px);
+  color: #fff;
+  font-size: 20px;
+}
+
+.sorting-point__reset button:hover {
+  background-color: rgba(31, 112, 127);
+}
+
+/*#endregion*/
+
+/*#region*/
+/* Christmas tree page */
+
+.xmas-tree {
+  margin: 0 auto;
+  max-width: 1440px;
+  width: 100%;
+  padding: 0 10px;
+  min-height: calc(100vh - 180px);
+  /* display: flex; */
+  display: none;
+  justify-content: space-between;
+  background-color: rgba(31, 112, 127, .3);
+  backdrop-filter: blur(5px);
+}
+
+.xmas-tree__left-section {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.left-section__container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: center;
+}
+
+.controls-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.controls__item {
+  width: 40px;
+  height: 40px;
+  background-size: contain;
+  background-color: transparent;
+  border: none;
+}
+
+.controls__item:hover {
+  cursor: pointer;
+  transition: .3s;
+  transform: scale(1.15);
+}
+
+.controls__item_active {
+  opacity: 0.5;
+}
+
+.audio-control {
+  background-image: url("../public/svg/audio.svg");
+}
+
+.snow-control {
+  background-image: url("../public/svg/snow.svg");
+}
+
+.clear-local-storage__btn2 {
+  width: 250px;
+  height: 40px;
+  margin: 10px 0;
+  border-radius: 20px;
+  border: 1px solid #278D9F;
+  background-color: rgba(31, 112, 127, .3);
+  backdrop-filter: blur(6px);
+  color: #fff;
+  font-size: 20px;
+}
+
+.clear-local-storage__btn2:hover {
+  background-color: rgba(31, 112, 127);
+}
+
+.tree-container::before {
+  content: "Choose a christmas tree";
+}
+
+.tree__item {
+  width: 115px;
+  height: 115px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, .5);
+  background-size: auto 110px;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  background-position: center;
+}
+
+.tree__item:hover {
+  box-shadow: inset 0 0 10px 5px white;
+}
+
+.tree__item_active {
+  box-shadow: inset 0 0 10px 5px white;
+}
+
+.bg-container::before {
+  content: "Choose a background";
+}
+
+.bg__item {
+  width: 85px;
+  height: 85px;
+  border: 1px solid #cccc;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, .5);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+
+.bg__item:hover {
+  box-shadow: inset 0 0 10px 5px white;
+}
+
+.bg__item_active {
+  box-shadow: inset 0 0 10px 5px white;
+}
+
+.garland-container {
+  align-items: center;
+  padding: 0 15px;
+}
+
+.garland-container::before {
+  content: "Choose a garland";
+}
+
+.garland__btns {
+  width: 75%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.garland-color__btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.garland-color__btn:hover {
+  transition: .3s;
+  transform: scale(1.15);
+}
+
+.garland-color__btn_active {
+  opacity: 0.5;
+}
+
+.multicolor-garland {
+  background: linear-gradient(124deg, #080808, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8);
+  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px, #ccc 0 2px 12px;
+}
+
+.red-garland {
+  background-color: #F00;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px, rgba(255, 0, 0, 0.5) 0 2px 12px;
+}
+
+.yellow-garland {
+  background-color: #FF0;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #808002 0 -1px 9px, #FF0 0 2px 12px;
+}
+
+.blue-garland {
+  background-color: #24E0FF;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #006 0 -1px 9px, #3F8CFF 0 2px 14px;
+}
+
+.green-garland {
+  background-color: #ABFF00;
+  box-shadow: rgb(0 0 0 / 20%) 0 -1px 7px 1px, inset #304701 0 -1px 9px, #89ff00 0 2px 12px;
+}
+
+.garland__switch-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.switch-btn__label {
+  position: relative;
+  display: inline-block;
+  width: 55px;
+  height: 30px;
+}
+
+.switch-btn__input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid #278D9F;
+  background-color: rgba(31, 112, 127, .3);
+  backdrop-filter: blur(6px);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 21px;
+  width: 21px;
+  left: 6px;
+  bottom: 2px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:hover {
+  background-color: #278D9F;
+}
+
+.switch-btn__input:checked + .slider {
+  background-color: #278D9F;
+}
+
+.switch-btn__input:checked + .slider:hover {
+  background-color: #183E42;
+}
+
+.switch-btn__input:focus + .slider {
+  box-shadow: 0 0 1px #183E42;
+}
+
+.switch-btn__input:checked + .slider:before {
+  -webkit-transform: translateX(19px);
+  -ms-transform: translateX(19px);
+  transform: translateX(19px);
+}
+
+/* Rounded sliders */
+
+.slider.round {
+  border-radius: 25px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.xmas-tree__center-section {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background-image: url(../public/bg/1.jpg);
+  background-size: cover;
+  background-position: center;
+  min-height: calc(100vh - 200px);
+  width: 48%;
+  overflow: hidden;
+}
+
+.main-tree {
+  width: 500px;
+  height: 714px;
+}
+
+.snowflakes__container {
+  min-height: 714px;
+  height: 100%;
+  width: 680px;
+  position: absolute;
+  top: 0px;
+  pointer-events: none;
+  z-index: 100;
+  overflow: hidden;
+}
+
+.snowflake {
+  background-image: url("../public/svg/snow.svg");
+  background-size: contain;
+	position: absolute;
+	top: -20px;
+  height: 30px;
+  width: 30px;
+	animation: fall linear forwards;
+}
+
+@keyframes fall {
+	to {
+		transform: translateY(105vh);
+	}
+}
+
+.xmas-tree__right-section {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.right-section__container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: start;
+}
+
+.favorites-container::before {
+  content: "Your favorite toys";
+}
+
+.favorite-toy__wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  max-width: 84px;
+  min-height: 84px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, .5);
+}
+
+.favorite-toy {
+  position: absolute;
+  height: 60px;
+  width: 60px;
+  cursor: move;
+}
+
+.favorite-toy__count {
+  position: absolute;
+  z-index: 10;
+  align-self: flex-end;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
+  bottom: 0;
+  right: 0;
+  padding: 0;
+  margin: 0;
+  border-radius: 10px;
+  background-color: #24C5DB;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.decorated-trees-container::before {
+  content: "Your decorated christmas trees";
+}
+
+.decorated-tree {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 115px;
+  min-width: 115px;
+  height: 115px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, .5);
+}
+
+.tree-container::before,
+.bg-container::before,
+.garland-container::before,
+.favorites-container::before,
+.decorated-trees-container::before {
+  width: 100%;
+  font-size: 20px;
+  font-weight: 400;
+  padding: 10px;
+  text-transform: uppercase;
+  text-align: center;
+} 
+
+/*#endregion*/
+
+/*#region*/
+/*Pop ups */
+
+.pop-up__container {
+  display: none;
+  background-color: rgba(0,0,0,0.5);
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.pop-up {
+  position: relative;
+  width: 400px;
+  height: 220px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: rgba(31, 112, 127, .3);
+  border: 3px solid #278D9F;
+  backdrop-filter: blur(5px);
+  border-radius: 25px;
+  font-size: 30px;
+  z-index: 100; 
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.pop-up__favorites {
+  display: none;
+  position: fixed;
+}
+
+.pop-up__search {
+  display: none;
+  position: fixed;
+}
+
+.pop-up__top {
+  position: absolute;
+  font-size: 24px;
+  top: 10px;
+  right: 20px;
+  margin: 0;
+  background-color: transparent;
+  border: none;
+  color: white;
+}
+
+.pop-up__top:hover {
+  cursor: pointer;
+  transition: .3s;
+  transform: scale(1.15);
+}
+
+.pop-up__top_active {
+  opacity: 0.5;
+}
+
+/*#endregion*/
+
+.footer {
+  display: flex;
+  height: 70px;
+}
+
+.footer div {
+  width: 33%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rs-logo {
+  width: 100px;
+  height: 45px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url("../public/svg/rss.svg");
+  transition: .3s;
+}
+
+@media (max-width: 1200px) {
+
+  .header {
+    height: 85px;
+    justify-content: space-evenly;
+    padding: 10px;
+  }
+
+  .header__nav a {
+    font-size: 18px;
+  }
+
+  .header__adds-input { 
+    width: 270px;
+  }
+
+  main {
+    min-height: calc(100vh - 155px);
+  }
+
+  .main-page {
+    min-height: calc(100vh - 195px);
+  }
+
+  .main-page__title {
+    width: 480px;
+    height: 220px;
+    font-size: 38px;
+    padding: 0 50px;
+  }
+
+  .xmas-decor__sorting {
+    height: auto;
+    width: 70%;
+    align-items: center;
+    padding: 10px 0;
+    margin: 0 auto;
+  }
+
+  .xmas-decor__sorting-points {
+    gap: 10px;
+  }
+
+  .xmas-decor__sorting-point {
+    justify-content: center;
+  }
+
+  .sorting-point__quantity {
+    margin: 0 auto;
+  }
+
+  .sorting-point__year {
+    margin: 0 auto;
+  }
+
+  .sorting-point__select {
+    margin: 0 auto;
+  }
+
+  .sorting-point__reset {
+    width: 500px;
+    justify-content: space-between;
+  }
+
+  .sorting-point__reset button {
+    width: 220px;
+  }
+
+  .xmas-decor__cards {
+    justify-content: space-evenly;
+  }
+
+  .xmas-tree {
+    min-height: calc(100vh - 195px);
+  }
+
+  .xmas-tree__left-section {
+    padding: 10px 0;
+  }
+
+  .controls__item {
+    width: 33px;
+    height: 33px;
+  }
+
+  .clear-local-storage__btn2 {
+    width: 200px;
+    height: 30px;
+    margin: 5px 0;
+    font-size: 18px;
+  }
+
+  .tree__item {
+    width: 85px;
+    height: 85px;
+    background-size: auto 80px;
+  }
+
+  .bg__item {
+    width: 80px;
+    height: 80px;
+  }
+
+  .garland-color__btn {
+    width: 22px;
+    height: 22px;
+  }
+
+  .switch-btn__label {
+    width: 44px;
+    height: 20px;
+  }
+  
+  .slider:before {
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 2px;
+  }
+
+  .main-tree {
+    width: 300px;
+    height: 500px;
+  }
+
+  .snowflakes__container {
+    width: 359px;
+  }
+
+  .right-section__container {
+    justify-content: center;
+    padding: 10px 0;
+  }
+
+  .favorite-toy__wrapper {
+    max-width: 74px;
+    min-height: 74px;
+  }
+  
+  .favorite-toy {
+    height: 50px;
+    width: 50px;
+  }
+
+  .decorated-tree {
+    min-width: 80px;
+    height: 80px;
+  }
+  
+  .tree-container::before,
+  .bg-container::before,
+  .garland-container::before,
+  .favorites-container::before,
+  .decorated-trees-container::before {
+    font-size: 18px;
+    padding: 5px;
+  } 
+
+}

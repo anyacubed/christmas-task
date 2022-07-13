@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>christmas-task</title>
+</head>
+<body>
+  <header class="header">
+    <nav class="header__nav">
+      <a class="header__icon" href="#main-page"></a>
+      <a class="header__toys-btn" href="#xmas-decor">christmas decorations</a>
+      <a class="header__tree-btn" href="#xmas-tree">christmas tree</a>
+    </nav>
+    <div class="header__adds">
+      <input class="header__adds-input" type="search" placeholder="Search" autofocus readonly onfocus="this.removeAttribute('readonly')">
+      <div class="header__adds-ball">
+        <span class="adds-ball__span">0</span>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div id="main-page" class="main-page">
+      <h1 class="main-page__title">Help grandma decorate a christmas tree</h1>
+      <button class="main-page__btn">Start</button>
+    </div>
+    <div id="xmas-decor" class="xmas-decor">
+      <section class="xmas-decor__sorting">
+        <div class="xmas-decor__sorting-points">
+          <div class="xmas-decor__sorting-point sorting-point__shape">
+            <p>Shape: </p>
+            <button class="sorting-point__btn shape__btn" data-filter="ball" data-type="shape"><img src="../public/svg/ball.svg" alt=""></button>
+            <button class="sorting-point__btn shape__btn" data-filter="bell" data-type="shape"><img src="../public/svg/bell.svg" alt=""></button>
+            <button class="sorting-point__btn shape__btn" data-filter="cone" data-type="shape"><img src="../public/svg/cone.svg" alt=""></button>
+            <button class="sorting-point__btn shape__btn" data-filter="snowflake" data-type="shape"><img src="../public/svg/snowflake.svg" alt=""></button>
+            <button class="sorting-point__btn shape__btn" data-filter="toy" data-type="shape"><img src="../public/svg/toy.svg" alt=""></button>
+          </div>
+          <div class="xmas-decor__sorting-point sorting-point__color">
+            <p>Color: </p>
+            <button class="sorting-point__btn color__btn" data-filter="white" data-type="color"><img src="../public/filter/white-color.png" alt=""></button>
+            <button class="sorting-point__btn color__btn" data-filter="yellow" data-type="color"><img src="../public/filter/yellow-color.png" alt=""></button>
+            <button class="sorting-point__btn color__btn" data-filter="red" data-type="color"><img src="../public/filter/red-color.png" alt=""></button>
+            <button class="sorting-point__btn color__btn" data-filter="blue" data-type="color"><img src="../public/filter/blue-color.png" alt=""></button>
+            <button class="sorting-point__btn color__btn" data-filter="green" data-type="color"><img src="../public/filter/green-color.png" alt=""></button>
+          </div>
+          <div class="xmas-decor__sorting-point sorting-point__size">
+            <p>Size: </p>
+            <button class="sorting-point__btn size__btn" data-filter="big" data-type="size"><img src="../public/svg/ball.svg" alt="" width="40px" height="40px"></button>
+            <button class="sorting-point__btn size__btn" data-filter="medium" data-type="size"><img src="../public/svg/ball.svg" alt="" width="35px" height="35px"></button>
+            <button class="sorting-point__btn size__btn" data-filter="small" data-type="size"><img src="../public/svg/ball.svg" alt="" width="30px" height="30px"></button>
+          </div>
+          <div class="xmas-decor__sorting-point sorting-point__checkbox">
+            <p>Favorites: </p>
+            <input class="checkbox__input" id="checkbox" type="checkbox">
+            <label for="checkbox" class="checkbox__label"></label>
+          </div>
+          <div class="sorting-point__quantity">
+            <!-- <span>Quantity: </span>
+            <div class="range" id="quantity__input"></div>
+            <div class="quantity__counter">
+              <span class="quantity__counter-min">1</span>
+              <span class="quantity__counter-max">12</span>
+            </div>  -->
+            <label for="quantity__input"><span>Quantity: </span></label>
+            <input class="range" type="range" id="quantity__input" min="1" max="12" value="0">
+            <div class="quantity__counter">
+              <span class="quantity__counter-current">1</span>
+              <span class="quantity__counter-max">12</span>
+            </div>
+          </div>
+          <div class="sorting-point__year">
+            <label for="year__input"><p>Acquisition year: </p></label>
+            <input class="range" type="range" id="year__input" min="1940" max="2020" value="0" step="10">
+            <div class="year__counter">
+              <p class="year__counter-current">1940</p>
+              <p class="year__counter-max">2020</p>
+            </div>
+          </div>
+          <select class="xmas-decor__sorting-point sorting-point__select" name="" id="">
+            <option value="" selected disabled>SORT BY</option>
+            <option class="sorting-point__option" value="1">By name from "A" to "Z"</option>
+            <option class="sorting-point__option" value="2">By name from "Z" to "A"</option>
+            <option class="sorting-point__option" value="3">By year of acquisition (ascending)</option>
+            <option class="sorting-point__option" value="4">By year of acquisition (descending)</option>
+          </select>
+          <div class="xmas-decor__sorting-point sorting-point__reset">
+            <button class="reset__btn">Reset filters</button>
+            <button class="clear-local-storage__btn">Reset all settings</button>
+          </div>
+        </div>
+      </section>
+      <section class="xmas-decor__cards"></section>
+    </div>
+    <div id="xmas-tree" class="xmas-tree">
+      <section class="xmas-tree__left-section">
+        <div class="left-section__container controls-container">
+          <button class="controls__item audio-control"></button>
+          <button class="controls__item snow-control"></button>
+        </div>
+        <div class="left-section__container">
+          <button class="clear-local-storage__btn2">Clear local storage</button>
+        </div>
+        <div class="left-section__container tree-container">
+          <div class="tree__item" data-tree="1"></div>
+          <div class="tree__item" data-tree="2"></div>
+          <div class="tree__item" data-tree="3"></div>
+          <div class="tree__item" data-tree="4"></div>
+          <div class="tree__item" data-tree="5"></div>
+          <div class="tree__item" data-tree="6"></div>
+        </div>
+        <div class="left-section__container bg-container">
+          <div class="bg__item" data-bg="1"></div>
+          <div class="bg__item" data-bg="2"></div>
+          <div class="bg__item" data-bg="3"></div>
+          <div class="bg__item" data-bg="4"></div>
+          <div class="bg__item" data-bg="5"></div>
+          <div class="bg__item" data-bg="6"></div>
+          <div class="bg__item" data-bg="7"></div>
+          <div class="bg__item" data-bg="8"></div>
+        </div>
+        <div class="left-section__container garland-container">
+          <div class="garland__btns">
+            <button class="garland-color__btn multicolor-garland" data-garland="multicolor"></button>
+            <button class="garland-color__btn red-garland" data-garland="red"></button>
+            <button class="garland-color__btn yellow-garland" data-garland="yellow"></button>
+            <button class="garland-color__btn blue-garland" data-garland="blue"></button>
+            <button class="garland-color__btn green-garland" data-garland="green"></button>
+          </div>
+          <div class="garland__switch-btn">
+            <label class="switch-btn__label">
+              <input class="switch-btn__input" type="checkbox">
+              <span class="slider round"></span>
+            </label>
+          </div>
+        </div>
+      </section>
+      <section class="xmas-tree__center-section">
+        <map name="tree-decoration">
+          <area data-drop-target="true" target="_blank" alt="" title="" coords="316,688,163,677,50,645,23,597,55,513,101,390,150,249,172,173,195,109,238,4,274,50,303,111,356,249,393,361,435,459,466,549,473,605,463,662" shape="poly">
+        </map>
+        <div class="main-tree__garland-container"></div>
+        <img class="main-tree" src="../public/tree/1.png" alt="christmas tree" usemap="#tree-decoration">
+        <div class="snowflakes__container"></div>
+      </section>
+      <section class="xmas-tree__right-section">
+        <div class="right-section__container favorites-container">
+          <template class="favorite-toy__template">
+            <div class="favorite-toy__wrapper">
+              <img class="favorite-toy" src="../public/toys/1.png" alt="Favorite toy">
+              <span class="favorite-toy__count"></span>
+            </div>
+          </template>
+        </div>
+        <div class="right-section__container decorated-trees-container">
+          <div class="decorated-tree"></div>
+          <div class="decorated-tree"></div>
+          <div class="decorated-tree"></div>
+        </div>
+      </section>
+    </div>
+    <div class="pop-up__container">
+      <section class="pop-up pop-up__favorites">
+        <button class="pop-up__top">✖</button>
+        <h3>Sorry, <br> all slots are full.</h3>
+      </section>
+      <section class="pop-up pop-up__search">
+        <button class="pop-up__top">✖</button>
+        <h3>Sorry, <br> no matches found.</h3>
+      </section>
+    </div>
+  </main>
+  <footer class="footer">
+    <div>
+      <a class="rs-logo" href="https://rs.school/js/" target="_blank"></a>
+    </div>
+    <div>
+      <p>2021</p>
+    </div>
+    <div>
+      <a class="footer__link" href="https://github.com/anyacubed" target="_blank">anyacubed</a>
+    </div>
+  </footer>
+  <template class="card-template">
+    <div class="card">
+      <h3 class="card__title"></h3>
+      <div class="card__content">
+        <img class="card__img" src="./" alt="toy">
+        <div class="card__ribbon"></div>
+        <div class="card__description">
+          <p class="quantity"></p>
+          <p class="year"></p>
+          <p class="shape"></p>
+          <p class="color"></p>
+          <p class="size"></p>
+          <p class="favorite"></p>
+        </div>
+      </div>
+    </div>
+  </template>
+  <script src="index.ts"></script>
+</body>
+</html>
